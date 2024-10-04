@@ -7,8 +7,25 @@ public class PublicacionE {
     private int id;
     private String descripcion;
     private String titulo;
-    private String requestions;
-    private ArrayList<Empresa> listadoProfesional;
+    private String requisitos;
+    private int idEmpresa;
+
+    public String getRequisitos() {
+        return requisitos;
+    }
+
+    public void setRequisitos(String requisitos) {
+        this.requisitos = requisitos;
+    }
+
+    public int getIdEmpresa() {
+        return idEmpresa;
+    }
+
+    public void setIdEmpresa(int idEmpresa) {
+        this.idEmpresa = idEmpresa;
+    }
+
 
     public int getId() {
         return id;
@@ -34,23 +51,31 @@ public class PublicacionE {
         this.titulo = titulo;
     }
 
-    public String getRequestions() {
-        return requestions;
+    public int getidEmpresa() {
+        return idEmpresa;
     }
 
-    public void setRequestions(String requestions) {
-        this.requestions = requestions;
+    public void setidEmpresa(int requestions) {
+        this.idEmpresa = idEmpresa;
     }
   
 
     public PublicacionE() {
     }
 
-    public PublicacionE(int id, String descripcion, String titulo, String requestions) {
+    public PublicacionE(int id, String descripcion, String titulo, int idEmpresa) {
         this.id = id;
         this.descripcion = descripcion;
         this.titulo = titulo;
-        this.requestions = requestions;
+        this.idEmpresa = idEmpresa;
+    }
+
+    public PublicacionE(int id, String descripcion, String titulo, String requisitos, int idEmpresa) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.titulo = titulo;
+        this.requisitos = requisitos;
+        this.idEmpresa = idEmpresa;
     }
 
 }
