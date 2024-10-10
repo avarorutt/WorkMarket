@@ -8,6 +8,25 @@ body {
   font-family: "Times New Roman", serif;
 }
 
+
+/*Esta funcion es lo que agregamos el grupo 4, todo acerca sobre los botones.*/
+.btn {
+  border: none; 
+  color: none;
+  padding: 8px 10px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  display: inline-flex;
+}
+
+.btn i {
+  margin-right: 5px;
+}
+.primary {background-color: #98D9B6;} 
+.primary:hover{color: #3A999B;}
+/*Aca terminan los botones */
+
+
 .container {
   display: grid;
   grid-template-areas: 
@@ -30,9 +49,8 @@ header {
 
 .sidebar-left {
   grid-area: sidebar-left;
-  background-color: #F2E8C4;
+  background-color: #88a898;
   padding: 20px;
-  text-align: center; /* Centrar texto en la barra lateral */
 }
 
 .main-content {
@@ -99,3 +117,30 @@ footer {
   .sidebar-left, .sidebar-right {
       padding: 10px;
   }
+
+/*Esta funcion es lo que agregamos el grupo 4, barra lateral izquierda*/
+
+  .sidebar-left, .sidebar-right {
+      padding: 10px;
+  }
+}
+
+.navbar {
+  grid-area: navbar;
+  text-align: left;
+}
+
+
+ul {
+    list-style: none;
+}
+
+nav a:hover{
+    color: #3A999B;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/* Aca termina la barra lateral izquierda */
