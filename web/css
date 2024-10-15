@@ -47,6 +47,11 @@ header {
   font-size: 25px;
 }
 
+img {
+  padding: 5px;
+  width: 100px;
+}
+
 .sidebar-left {
   grid-area: sidebar-left;
   background-color: #88a898;
