@@ -147,7 +147,221 @@ public class GestionarProfesional {
     }
     return respuesta;
 }
-   
+    //Buscar Profesional nombre
+    public ArrayList<Profesional> buscarProfesionalN (String nombre) throws SQLException{
+      ArrayList<Profesional> lista = new ArrayList<>();
+      
+        try {
+            cn = c.conectar();
+            ps = cn.prepareStatement("SELECT * FROM profesional WHERE nombre=?");
+            ps.setString(1, nombre);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+           Profesional e = new Profesional();
+                e.setId(rs.getInt(1));
+                e.setUsuario(rs.getString(2));
+                e.setContrasena(rs.getString(3));
+                e.setNombre(rs.getString(4));
+                e.setApellido(rs.getString(5));
+                e.setTelefono(rs.getInt(6));
+                e.setEmail(rs.getString(7));
+                e.setFotodePerfil(rs.getString(8));
+                e.setTitulodeProfesional(rs.getString(9));
+                e.setCalificacion(rs.getInt(10));
+                e.setCurriculum(rs.getString(11));
+                e.setDireccion(rs.getString(12));
+                e.setLocalidad(rs.getString(13));
+                e.setProvincia(rs.getString(14));
+                lista.add(e);
+             
+            
+            }
+        } catch (SQLException exc) {
+           
+        }finally{
+            try {
+                if (rs!=null) {rs.close();}
+                if (ps!=null) {ps.close();}
+                if (cn!=null) {cn.close();}
+            } catch (SQLException exc2){
+               
+            }
+        }
+        return lista;
+    }
+     //Buscar Profesional apellido
+    public ArrayList<Profesional> buscarProfesionalA (String apellido) throws SQLException{
+      ArrayList<Profesional> lista = new ArrayList<>();
+      
+        try {
+            cn = c.conectar();
+            ps = cn.prepareStatement("SELECT * FROM profesional WHERE apellido=?");
+            ps.setString(1, apellido);
+            rs = ps.executeQuery();
+             
+            while(rs.next()){
+           Profesional e = new Profesional();
+                e.setId(rs.getInt(1));
+                e.setUsuario(rs.getString(2));
+                e.setContrasena(rs.getString(3));
+                e.setNombre(rs.getString(4));
+                e.setApellido(rs.getString(5));
+                e.setTelefono(rs.getInt(6));
+                e.setEmail(rs.getString(7));
+                e.setFotodePerfil(rs.getString(8));
+                e.setTitulodeProfesional(rs.getString(9));
+                e.setCalificacion(rs.getInt(10));
+                e.setCurriculum(rs.getString(11));
+                e.setDireccion(rs.getString(12));
+                e.setLocalidad(rs.getString(13));
+                e.setProvincia(rs.getString(14));
+                lista.add(e);
+                
+            
+            }
+        } catch (SQLException exc) {
+           
+        }finally{
+            try {
+                if (rs!=null) {rs.close();}
+                if (ps!=null) {ps.close();}
+                if (cn!=null) {cn.close();}
+            } catch (SQLException exc2){
+               
+            }
+        }
+        return lista;
+    }
+        //Buscar Profesional tituloProfesional
+    public ArrayList<Profesional> buscarProfesionalTiPf (String tituloProfesional) throws SQLException{
+      ArrayList<Profesional> lista = new ArrayList<>();
+      
+        try {
+            cn = c.conectar();
+            ps = cn.prepareStatement("SELECT * FROM profesional WHERE tituloProfesional=?");
+            ps.setString(1, tituloProfesional);
+            rs = ps.executeQuery();
+             
+            while(rs.next()){
+           Profesional e = new Profesional();
+                e.setId(rs.getInt(1));
+                e.setUsuario(rs.getString(2));
+                e.setContrasena(rs.getString(3));
+                e.setNombre(rs.getString(4));
+                e.setApellido(rs.getString(5));
+                e.setTelefono(rs.getInt(6));
+                e.setEmail(rs.getString(7));
+                e.setFotodePerfil(rs.getString(8));
+                e.setTitulodeProfesional(rs.getString(9));
+                e.setCalificacion(rs.getInt(10));
+                e.setCurriculum(rs.getString(11));
+                e.setDireccion(rs.getString(12));
+                e.setLocalidad(rs.getString(13));
+                e.setProvincia(rs.getString(14));
+                lista.add(e);
+                
+            
+            }
+        } catch (SQLException exc) {
+           
+        }finally{
+            try {
+                if (rs!=null) {rs.close();}
+                if (ps!=null) {ps.close();}
+                if (cn!=null) {cn.close();}
+            } catch (SQLException exc2){
+               
+            }
+        }
+        return lista;
+    }
+         //Buscar Profesional localidad
+    public ArrayList<Profesional> buscarProfesionalLoc (String localidad) throws SQLException{
+      ArrayList<Profesional> lista = new ArrayList<>();
+      
+        try {
+            cn = c.conectar();
+            ps = cn.prepareStatement("SELECT * FROM profesional WHERE localidad=?");
+            ps.setString(1, localidad);
+            rs = ps.executeQuery();
+             
+            while(rs.next()){
+           Profesional e = new Profesional();
+                e.setId(rs.getInt(1));
+                e.setUsuario(rs.getString(2));
+                e.setContrasena(rs.getString(3));
+                e.setNombre(rs.getString(4));
+                e.setApellido(rs.getString(5));
+                e.setTelefono(rs.getInt(6));
+                e.setEmail(rs.getString(7));
+                e.setFotodePerfil(rs.getString(8));
+                e.setTitulodeProfesional(rs.getString(9));
+                e.setCalificacion(rs.getInt(10));
+                e.setCurriculum(rs.getString(11));
+                e.setDireccion(rs.getString(12));
+                e.setLocalidad(rs.getString(13));
+                e.setProvincia(rs.getString(14));
+                lista.add(e);
+                
+            
+            }
+        } catch (SQLException exc) {
+           
+        }finally{
+            try {
+                if (rs!=null) {rs.close();}
+                if (ps!=null) {ps.close();}
+                if (cn!=null) {cn.close();}
+            } catch (SQLException exc2){
+               
+            }
+        }
+        return lista;
+    }
+         //Buscar Profesional provincia
+    public ArrayList<Profesional> buscarProfesionalP (String provincia) throws SQLException{
+      ArrayList<Profesional> lista = new ArrayList<>();
+      
+        try {
+            cn = c.conectar();
+            ps = cn.prepareStatement("SELECT * FROM profesional WHERE provincia=?");
+            ps.setString(1, provincia);
+            rs = ps.executeQuery();
+             
+            while(rs.next()){
+           Profesional e = new Profesional();
+                e.setId(rs.getInt(1));
+                e.setUsuario(rs.getString(2));
+                e.setContrasena(rs.getString(3));
+                e.setNombre(rs.getString(4));
+                e.setApellido(rs.getString(5));
+                e.setTelefono(rs.getInt(6));
+                e.setEmail(rs.getString(7));
+                e.setFotodePerfil(rs.getString(8));
+                e.setTitulodeProfesional(rs.getString(9));
+                e.setCalificacion(rs.getInt(10));
+                e.setCurriculum(rs.getString(11));
+                e.setDireccion(rs.getString(12));
+                e.setLocalidad(rs.getString(13));
+                e.setProvincia(rs.getString(14));
+                lista.add(e);
+                
+            
+            }
+        } catch (SQLException exc) {
+           
+        }finally{
+            try {
+                if (rs!=null) {rs.close();}
+                if (ps!=null) {ps.close();}
+                if (cn!=null) {cn.close();}
+            } catch (SQLException exc2){
+               
+            }
+        }
+        return lista;
+    }
 }
 
 
