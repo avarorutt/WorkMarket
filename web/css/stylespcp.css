@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", serif;
+}
+
+
+/*Esta funcion es lo que agregamos el grupo 4, todo acerca sobre los botones.*/
+.btn {
+  border: none; 
+  color: none;
+  padding: 8px 10px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  display: inline-flex;
+}
+
+.btn i {
+  margin-right: 5px;
+}
+.primary {background-color: #98D9B6;} 
+.primary:hover{color: #3A999B;}
+/*Aca terminan los botones */
+
+
+.container {
+  display: grid;
+  grid-template-areas: 
+      "header header header"
+      "sidebar-left main-content sidebar-right"
+      "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: #3A999B;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+
+img {
+  padding: 5px;
+  width: 100px;
+}
+
+.sidebar-left {
+  grid-area: sidebar-left;
+  background-color: #88a898;
+  padding: 20px;
+}
+
+.main-content {
+  grid-area: main-content;
+  background-color: #f4f4f4;
+  padding: 20px;
+  overflow-y: auto;
+  text-align: center; /* Centrar texto en el contenido principal */
+}
+
+.sidebar-right {
+  grid-area: sidebar-right;
+  background-color: #04ab77;
+  padding: 20px;
+  text-align: center; /* Centrar texto en la barra lateral */
+}
+
+footer {
+  grid-area: footer;
+  background-color: #F2E8C4;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.parrafo {
+    width: 100%; /* Cambiar a 100% para que ocupe el ancho del contenedor */
+    max-width: 650px; /* Ancho máximo para el texto */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
+    font-family: 'calibri';
+    font-size: 20px;
+    text-align: justify; /* Justificar texto */
+}
+
+.imagenes {
+    width: 100%; /* Cambiar a 100% para que ocupe el ancho del contenedor */
+    max-width: 600px; /* Ancho máximo para la imagen */
+    margin: 20px auto; /* Centrar imagen */
+}
+
+.titulo {
+    width: 100%; /* Cambiar a 100% para que ocupe el ancho del contenedor */
+    max-width: 600px; /* Ancho máximo para el título */
+    margin: 0 auto; /* Centrar contenedor del título */
+    padding: 20px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+      grid-template-areas: 
+          "header"
+          "main-content"
+          "sidebar-left"
+          "sidebar-right"
+          "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto auto auto;
+  }
+
+  .sidebar-left, .sidebar-right {
+      padding: 10px;
+  }
+
+/*Esta funcion es lo que agregamos el grupo 4, barra lateral izquierda*/
+
+  .sidebar-left, .sidebar-right {
+      padding: 10px;
+  }
+}
+
+.navbar {
+  grid-area: navbar;
+  text-align: left;
+}
+
+
+ul {
+    list-style: none;
+}
+
+nav a:hover{
+    color: #3A999B;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/* Aca termina la barra lateral izquierda */
+
+
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.btn-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 120px; /* Ajusta el ancho de los botones */
+}
+
+.btn-action img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.btn-action:hover {
+    background-color: #e0e0e0;
+}
+
+.button-container {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 botones por fila */
+    gap: 10px; /* Espaciado entre botones */
+}
