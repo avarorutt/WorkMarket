@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Adaptativo</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href="css/styles_2.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <header class="header">Encabezado</header>
+           <header class="header">
+
+<div> 
+<img src="https://github.com/AntoRosaless/WorkMarket/blob/master/web/ima/logo.jpg?raw=true" />
+<div>
+    
+
+    
+<! Aca agregamos los botones - GRUPO 4 -->
+<button class="btn primary"><i class="fas fa-exclamation-circle"></i> Inicio</button>
+<button class="btn primary"><i class="fas fa-exclamation-circle"></i> Mapa del sitio</button>
+<button class="btn primary"><i class="fas fa-check-circle"></i> Empresas</button>
+<button class="btn primary"><i class="fas fa-exclamation-triangle"></i> Profesionales</button>
+<button class="btn primary"><i class="fas fa-times-circle"></i>Notificaciones</button>
+<! Aca terminan los botones - GRUPO 4 -->
+
+</header>
+        
+        <aside class="sidebar-left">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="registrarProfesional.jsp">Registrar Profesional</a></li>
+                    <li><a href="registrarEmpresa.jsp">Registrar Empresa</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                    <li><a href="publicaciones.html">Publicaciones Laborales</a></li>
+                    <li><a href="empresas.html">Listado de Empresas</a></li>
+                    <li><a href="profesionales.html">Listados de Profesionales</a></li>
+                    <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                    <li><a href="quienessomos.html">Quienes Somos</a></li>
+                    <li><a href="mapa.html">Mapa del Sitio</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content"> 
+            <form name="formulario" action="ControladorEmpresa" method="POST"> 
+                <label for="usuario">Ingrese el usuario:</label>
+                <input type="text" name="usuario" class="input-field" />
+                <br><br/> 
+
+                <label for="contrasena">Ingrese la Contrasena:</label>
+                <input type="password" name="contrasena" class="input-field" />
+                <br><br/>
+
+                <label for="razonsocial">Ingrese la razón social:</label>
+                <input type="text" name="razonsocial" class="input-field" />
+                <br><br/>
+
+                <label for="telefono">Ingrese el teléfono:</label>
+                <input type="text" name="telefono" class="input-field" />
+                <br><br/>
+
+                <label for="email">Ingrese su email:</label>
+                <input type="text" name="email" id="email" class="input-field" />
+                <br><br/>
+
+                <label for="direccion">Ingrese su direccion:</label>
+                <input type="text" name="direccion" class="input-field" />
+                <br><br/>
+
+                <label for="localidad">Ingrese su localidad:</label>
+                <input type="text" name="localidad" class="input-field" />
+                <br><br/>
+
+                <label for="provincia">Ingrese su provincia:</label>
+                <input type="text" name="provincia" class="input-field" />
+                <br><br/>
+
+                <input type="submit" value="enviar" class="submit-btn" />
+                <input type="reset" value="borrar" class="reset-btn" />
+            </form> 
+        </main>
+
+        <aside class="sidebar-right">Barra Lateral Derecha</aside>
+        <footer class="footer">Pie de Página</footer>
+        <footer class="footer">
+      <div class="contenedorf">
+      <div class="f1">
+          Seguinos en todas las Redes Sociales
+      </div>
+      <div class="f2">
+          <a href=""><img src="ima/icono1.jpg" alt=""/></a>
+          <a href=""><img src="ima/icono2.jpg" alt=""/></a>
+          <a href=""><img src="ima/icono3.jpg" alt=""/></a>
+          <a href=""><img src="ima/icono4.jpg" alt=""/></a>
+      </div></footer>
+    </div>
+</body>
+</html>
