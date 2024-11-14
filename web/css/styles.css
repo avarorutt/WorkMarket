@@ -1,0 +1,132 @@
+*/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "sidebar-left main-content sidebar-right"
+    "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: #3A999B;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+.sidebar-left {
+  grid-area: sidebar-left;
+  background-color: #F2E8C4;
+  padding: 20px;
+}
+
+.main-content {
+  grid-area: main-content;
+  background-color: #FFFFFF;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar-right {
+  grid-area: sidebar-right;
+  background-color: #F2E8C4;
+  padding: 20px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #98D9B6;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilo del formulario */
+form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-btn, .reset-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  margin-right: 10px;
+}
+
+.reset-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.reset-btn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas: 
+      "header"
+      "main-content"
+      "sidebar-left"
+      "sidebar-right"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto auto;
+  }
+
+  .sidebar-left, .sidebar-right {
+    padding: 10px;
+  }
+}
