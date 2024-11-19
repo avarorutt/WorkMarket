@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Adaptativo</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styles2.css" rel="stylesheet" type="text/css"/>
+    <link href="css/stylespcp.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado con botones y logotipo -->
+        <header class="header">
+            <img src="https://github.com/AntoRosaless/WorkMarket/blob/master/web/ima/logo.jpg?raw=true" alt="Logotipo" style="width: 80px; height: auto;" />
+            <div class="header-buttons">
+                <!-- Botones de navegación -->
+                <button class="btn primary"><i class="fas fa-exclamation-circle"></i> Inicio</button>
+                <button class="btn primary"><i class="fas fa-exclamation-circle"></i> Mapa del sitio</button>
+                <button class="btn primary"><i class="fas fa-check-circle"></i> Empresas</button>
+                <button class="btn primary"><i class="fas fa-exclamation-triangle"></i> Profesionales</button>
+                <button class="btn primary"><i class="fas fa-times-circle"></i> Notificaciones</button>
+            </div>
+        </header>
+
+        <!-- Barra lateral izquierda con enlaces -->
+        <aside class="sidebar-left">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="registrarProfesional.jsp">Registrar Profesional</a></li>
+                    <li><a href="registrarEmpresa.jsp">Registrar Empresa</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                    <li><a href="publicaciones.html">Publicaciones Laborales</a></li>
+                    <li><a href="empresas.html">Listado de Empresas</a></li>
+                    <li><a href="profesionales.html">Listados de Profesionales</a></li>
+                    <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                    <li><a href="quienessomos.html">Quienes Somos</a></li>
+                    <li><a href="mapa.html">Mapa del Sitio</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal con formulario -->
+        <main class="main-content">
+            <h1>Formulario de registro para el profesional</h1>
+            <form name="formulariop" action="ControladorProfesional" method="POST">
+                Ingrese su nombre: <input type="text" name="nombre" value="" /> 
+                <br><br>
+                Ingrese su apellido: <input type="text" name="apellido" value="" /> 
+                <br><br>
+                Ingrese su usuario: <input type="text" name="usuario" value="" /> 
+                <br><br>
+                Ingrese su clave: <input type="password" name="contrasena" value="" /> 
+                <br><br>
+                Ingrese su teléfono: <input type="text" name="telefono" value="" /> 
+                <br><br>
+                Ingrese su email: <input type="text" name="email" value="" />
+                <br><br>
+                Ingrese su dirección: <input type="text" name="direccion" value="" />
+                <br><br>
+                Ingrese su localidad: <input type="text" name="localidad" value="" />
+                <br><br>
+                Ingrese su provincia: <input type="text" name="provincia" value="" />
+                <br><br>
+                <input type="submit" value="Enviar" /> 
+                <input type="reset" value="Borrar" />
+                <br><br>
+            </form>
+        </main> 
+
+        <!-- Barra lateral derecha -->
+        <aside class="sidebar-right">Espacio publicitario</aside>
+
+        <!-- Pie de página con iconos de redes sociales -->
+        <footer class="footer">
+            <div class="contenedorf">
+                <div class="f1">
+                    Seguinos en todas las Redes Sociales
+                </div>
+                <div class="f2">
+    <a href=""><img src="ima/facebook.png" alt="Facebook" style="width: 40px; height: 40px;"/></a>
+    <a href=""><img src="ima/x.png" alt="Twitter" style="width: 60px; height: 60px;"/></a>
+    <a href=""><img src="ima/insta.png" alt="Instagram" style="width: 50px; height: 40px;"/></a>
+    <a href=""><img src="ima/link.png" alt="LinkedIn" style="width: 40px; height: 40px;"/></a>
+</div>
+
+                
+
+
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
