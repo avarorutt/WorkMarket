@@ -363,6 +363,44 @@ public class GestionarProfesional {
         }
         return lista;
     }
+    public Profesional buscarProfesionalUsuario(String usuario, String contrasena) throws SQLException{
+        Profesional e = new Profesional();
+        try {
+            cn = c.conectar();
+            ps = cn.prepareStatement("SELECT * FROM profesional WHERE usuario=? and contrasena=?");
+            ps.setString(1, usuario);
+            ps.setString(2, contrasena);
+            rs = ps.executeQuery();
+            if (rs.next()){
+                e.setId(rs.getInt(1));
+                e.setUsuario(rs.getString(2));
+                e.setContrasena(rs.getString(3));
+                e.setNombre(rs.getString(4));
+                e.setApellido(rs.getString(5));
+                e.setTelefono(rs.getInt(6));
+                e.setEmail(rs.getString(7));
+                e.setFotodePerfil(rs.getString(8));
+                e.setTitulodeProfesional(rs.getString(9));
+                e.setCalificacion(rs.getInt(10));
+                e.setCurriculum(rs.getString(11));
+                e.setDireccion(rs.getString(12));
+                e.setLocalidad(rs.getString(13));
+                e.setProvincia(rs.getString(14));
+            }
+        } catch (SQLException exc) {
+           
+        }finally{
+            try {
+                if (rs!=null) {rs.close();}
+                if (ps!=null) {ps.close();}
+                if (cn!=null) {cn.close();}
+            } catch (SQLException exc2){
+               
+            }
+        }
+        return e;
+    }
+}
 }
 
 
