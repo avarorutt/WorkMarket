@@ -52,7 +52,7 @@ public class GestionarPublicacionE {
         ArrayList <PublicacionE> lista = new ArrayList<>();
         try {
             cn = c.conectar();
-            ps = cn.prepareStatement("SELECT * FROM publicacionE WHERE idEmpresa>0 ");
+            ps = cn.prepareStatement("SELECT * FROM publicacione WHERE idEmpresa>0 ");
             rs = ps.executeQuery();
             while (rs.next()) {
                 PublicacionE pe = new PublicacionE() ;
