@@ -52,6 +52,169 @@ public class GestionarEmpresa {
         }
         return respuesta;
     }
+
+    //Buscar Empresa por Razón Social
+    
+public ArrayList<Empresa> buscarEmpresaRazonSocial(String razonSocial) throws SQLException {
+       ArrayList<Empresa> ae = new ArrayList<>();
+    try {
+        cn = c.conectar();
+        ps = cn.prepareStatement("SELECT * FROM empresa WHERE razonSocial=?");
+        ps.setString(1, razonSocial);
+        rs = ps.executeQuery();
+        
+
+        while (rs.next()) {
+                   
+            Empresa e = new Empresa();
+            e.setId(rs.getInt(1));
+            e.setUsuario(rs.getString(2));
+            e.setContraseña(rs.getString(3));
+            e.setRazonSocial(rs.getString(4));
+            e.setTelefono(rs.getInt(5));
+            e.setEmail(rs.getString(6));
+            e.setDireccion(rs.getString(7));
+            e.setLocalidad(rs.getString(8));
+            e.setProvincia(rs.getString(9));
+            e.setRubro(rs.getString(10));
+            e.setLogo(rs.getString(11));
+            e.setCalificacion(rs.getInt(12));
+            e.setCertificacion(rs.getString(13));
+            ae.add(e);
+  
+        }
+    } catch (SQLException exc) {
+        // Manejo de excepciones
+    } finally {
+        try {
+            if (rs != null) { rs.close(); }
+            if (ps != null) { ps.close(); }
+            if (cn != null) { cn.close(); }
+        } catch (SQLException exc2) {
+            // Manejo de excepciones
+        }
+    }
+    return ae;
+}
+
+    //Buscar Empresa por Localidad
+public ArrayList<Empresa> buscarEmpresaPorLocalidad(String localidad) throws SQLException {
+    ArrayList<Empresa> elo = new ArrayList<>();
+    try {
+        cn = c.conectar();
+        ps = cn.prepareStatement("SELECT * FROM empresa WHERE localidad=?");
+        ps.setString(1, localidad);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            Empresa e = new Empresa();
+            e.setId(rs.getInt(1));
+            e.setUsuario(rs.getString(2));
+            e.setContraseña(rs.getString(3));
+            e.setRazonSocial(rs.getString(4));
+            e.setTelefono(rs.getInt(5));
+            e.setEmail(rs.getString(6));
+            e.setDireccion(rs.getString(7));
+            e.setLocalidad(rs.getString(8));
+            e.setProvincia(rs.getString(9));
+            e.setRubro(rs.getString(10));
+            e.setLogo(rs.getString(11));
+            e.setCalificacion(rs.getInt(12));
+            e.setCertificacion(rs.getString(13));
+            elo.add(e);
+        }
+    } catch (SQLException exc) {
+        // Manejo de excepciones
+    } finally {
+        try {
+            if (rs != null) { rs.close(); }
+            if (ps != null) { ps.close(); }
+            if (cn != null) { cn.close(); }
+        } catch (SQLException exc2) {
+            // Manejo de excepciones
+        }
+    }
+    return elo;
+}
+
+    //Buscar Empresa por Provincia
+public ArrayList<Empresa> buscarEmpresaPorProvincia(String provincia) throws SQLException {
+    ArrayList<Empresa> ep = new ArrayList<>();
+    try {
+        cn = c.conectar();
+        ps = cn.prepareStatement("SELECT * FROM empresa WHERE provincia=?");
+        ps.setString(1, provincia);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            Empresa e = new Empresa();
+            e.setId(rs.getInt(1));
+            e.setUsuario(rs.getString(2));
+            e.setContraseña(rs.getString(3));
+            e.setRazonSocial(rs.getString(4));
+            e.setTelefono(rs.getInt(5));
+            e.setEmail(rs.getString(6));
+            e.setDireccion(rs.getString(7));
+            e.setLocalidad(rs.getString(8));
+            e.setProvincia(rs.getString(9));
+            e.setRubro(rs.getString(10));
+            e.setLogo(rs.getString(11));
+            e.setCalificacion(rs.getInt(12));
+            e.setCertificacion(rs.getString(13));
+            ep.add(e);
+        }
+    } catch (SQLException exc) {
+        // Manejo de excepciones
+    } finally {
+        try {
+            if (rs != null) { rs.close(); }
+            if (ps != null) { ps.close(); }
+            if (cn != null) { cn.close(); }
+        } catch (SQLException exc2) {
+            // Manejo de excepciones
+        }
+    }
+    return ep   ;
+}
+
+    //Buscar Empresa por Rubro
+public ArrayList<Empresa> buscarEmpresaPorRubro(String rubro) throws SQLException {
+    ArrayList<Empresa> er = new ArrayList<>();
+    try {
+        cn = c.conectar();
+        ps = cn.prepareStatement("SELECT * FROM empresa WHERE rubro=?");
+        ps.setString(1, rubro);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            Empresa e = new Empresa();
+            e.setId(rs.getInt(1));
+            e.setUsuario(rs.getString(2));
+            e.setContraseña(rs.getString(3));
+            e.setRazonSocial(rs.getString(4));
+            e.setTelefono(rs.getInt(5));
+            e.setEmail(rs.getString(6));
+            e.setDireccion(rs.getString(7));
+            e.setLocalidad(rs.getString(8));
+            e.setProvincia(rs.getString(9));
+            e.setRubro(rs.getString(10));
+            e.setLogo(rs.getString(11));
+            e.setCalificacion(rs.getInt(12));
+            e.setCertificacion(rs.getString(13));
+            er.add(e);
+        }
+    } catch (SQLException exc) {
+        // Manejo de excepciones
+    } finally {
+        try {
+            if (rs != null) { rs.close(); }
+            if (ps != null) { ps.close(); }
+            if (cn != null) { cn.close(); }
+        } catch (SQLException exc2) {
+            // Manejo de excepciones
+        }
+    }
+    return er;
+}
+
+
     
     //Buscar Empresa
     public Empresa buscarEmpresaId(int idEmpresa) throws SQLException{
