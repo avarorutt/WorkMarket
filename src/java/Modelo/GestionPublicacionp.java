@@ -41,6 +41,37 @@ public class GestionPublicacionp {
         return respuesta;
     }
 
+    public ArrayList<PublicacionProfesional> buscarPublicacionesP() throws SQLException {
+    
+    ArrayList<PublicacionProfesional> lista = new ArrayList<>();
+    try {
+        cn = c.conectar();
+        ps = cn.prepareStatement("SELECT * FROM publicacionp WHERE idProf > 0");
+        rs = ps.executeQuery();
+        
+        while (rs.next()) {
+            PublicacionProfesional pp = new PublicacionProfesional();
+            pp.setIdpublicacionp(rs.getInt("idpublicacionp"));
+            pp.setTitulo(rs.getString("titulo"));
+            pp.setDescripcion(rs.getString("descripcion"));
+            pp.setRubro(rs.getString("rubro"));
+            pp.setIdProf(rs.getInt("idProf"));
+            lista.add(pp);
+        }
+    } catch (SQLException exc) {
+        exc.printStackTrace(); // Manejo de errores
+    } finally {
+        try {
+            if (rs != null) { rs.close(); }
+            if (ps != null) { ps.close(); }
+            if (cn != null) { cn.close(); }
+        } catch (SQLException exc2) {
+            exc2.printStackTrace(); // Manejo de errores
+        }
+    }
+    return lista;
+}
+
     // Buscar Publicación por ID
     public PublicacionProfesional buscarPublicacionId(int id) throws SQLException {
         PublicacionProfesional p = new PublicacionProfesional();
